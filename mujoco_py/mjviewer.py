@@ -41,7 +41,7 @@ class MjViewerBasic(cymj.MjRenderContextWindow):
         glfw.set_scroll_callback(self.window, self._scroll_callback)
         glfw.set_key_callback(self.window, self.key_callback)
 
-    def render(self):
+    def render(self, width, height, cam):
         """
         Render the current simulation state to the screen or off-screen buffer.
         Call this in your main loop.
@@ -52,7 +52,7 @@ class MjViewerBasic(cymj.MjRenderContextWindow):
             exit(0)
 
         with self._gui_lock:
-            super().render()
+            super().render(width=width, height=height, camera_name=cam)
 
         glfw.poll_events()
 

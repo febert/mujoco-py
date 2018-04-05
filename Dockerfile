@@ -1,6 +1,6 @@
 # We need the CUDA base dockerfile to enable GPU rendering
 # on hosts with GPUs.
-FROM nvidia/cuda:8.0-devel-ubuntu16.04
+FROM nvidia/cuda:9.0-devel-ubuntu16.04
 
 RUN apt-get update -q \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
